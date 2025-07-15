@@ -1,0 +1,9 @@
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 1.25rem;
+  font-family: Arial, sans-serif;
+  color: #0077cc;
+}
