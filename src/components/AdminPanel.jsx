@@ -27,7 +27,7 @@ function AdminPanel() {
     await updateDoc(busRef, {
       current_location: { lat: parseFloat(lat), lon: parseFloat(lon) },
     });
-    alert("✅ Bus location updated!");
+    alert("Bus location updated!");
     setLat("");
     setLon("");
   };
@@ -50,14 +50,14 @@ function AdminPanel() {
   const handleSaveStops = async () => {
     const routeRef = doc(db, "routes", "route1");
     await updateDoc(routeRef, { stops });
-    alert("✅ Route stops updated!");
+    alert("Route stops updated!");
   };
 
   if (loading) return <div className={styles.panel}>Loading stops…</div>;
 
   return (
     <div className={styles.panel}>
-      <div className={styles.heading}>🚌 Admin Panel — Update Bus Location</div>
+      <div className={styles.heading}>Admin Panel — Update Bus Location</div>
       <form onSubmit={handleBusLocationSubmit}>
         <input
           type="text"
@@ -82,7 +82,7 @@ function AdminPanel() {
 
       <hr style={{ margin: "2rem 0" }} />
 
-      <div className={styles.heading}>🚏 Manage Route Stops</div>
+      <div className={styles.heading}> Manage Route Stops</div>
 
       <table className={styles.stopsTable}>
         <thead>

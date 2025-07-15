@@ -23,7 +23,7 @@ function RecenterMap({ lat, lon }) {
   return null;
 }
 
-// 🔷 Bus icon
+// Bus icon
 const busIcon = L.icon({
   iconUrl: busIconUrl,
   iconSize: [40, 40],
@@ -31,7 +31,7 @@ const busIcon = L.icon({
   popupAnchor: [0, -40],
 });
 
-// 🔷 Stop icon
+// Stop icon
 const stopIcon = L.icon({
   iconUrl: stopIconUrl,
   iconSize: [30, 30],
@@ -47,7 +47,7 @@ function MapView() {
     const unsub = onSnapshot(doc(db, "buses", "bus1"), (docSnap) => {
       const data = docSnap.data();
       if (data?.current_location?.lat != null && data?.current_location?.lon != null) {
-        console.log("📍 Bus Location from Firestore:", data.current_location);
+        console.log("Bus Location from Firestore:", data.current_location);
         setBusLocation(data.current_location);
       }
     });
@@ -83,7 +83,7 @@ function MapView() {
 
       {/* Bus Marker with custom icon */}
       <Marker position={[busLocation.lat, busLocation.lon]} icon={busIcon}>
-        <Popup>🚌 College Bus: Main Campus Route</Popup>
+        <Popup>College Bus: Main Campus Route</Popup>
       </Marker>
 
       {/* Route Polyline */}
@@ -101,7 +101,7 @@ function MapView() {
           position={[stop.lat, stop.lon]}
           icon={stopIcon}
         >
-          <Popup>📍 Stop: {stop.name}</Popup>
+          <Popup>Stop: {stop.name}</Popup>
         </Marker>
       ))}
     </MapContainer>

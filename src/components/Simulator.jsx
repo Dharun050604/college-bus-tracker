@@ -18,7 +18,7 @@ function Simulator() {
 
       intervalId = setInterval(async () => {
         const stop = stops[i];
-        console.log("🚌 Updating bus to stop:", stop.name);
+        console.log("Updating bus to stop:", stop.name);
 
         await updateDoc(doc(db, "buses", "bus1"), {
           current_location: {
